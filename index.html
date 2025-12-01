@@ -301,6 +301,10 @@
             cursor: pointer;
             position: relative;
             top: 0;
+            display: flex;
+            flex-direction: column;
+            text-decoration: none; /* For when using as link */
+            color: inherit;
         }
 
         .project-card:hover {
@@ -309,24 +313,16 @@
         }
 
         .card-image {
-            height: 200px;
-            background-color: #ddd;
-            background-image: linear-gradient(135deg, #e0e0e0 25%, #f5f5f5 25%, #f5f5f5 50%, #e0e0e0 50%, #e0e0e0 75%, #f5f5f5 75%, #f5f5f5 100%);
-            background-size: 20px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #999;
-            font-size: 3rem;
+            width: 100%;
+            height: 200px; /* Fixed height for consistency */
+            object-fit: cover; /* Maintain aspect ratio and cover the area */
+            display: block; 
+            background-color: #eee;
         }
-
-        /* Mock images for visual context */
-        .card-image.game1 { background: linear-gradient(to bottom right, #2C3E50, #3498DB); }
-        .card-image.game2 { background: linear-gradient(to bottom right, #16a085, #f1c40f); }
-        .card-image.game3 { background: linear-gradient(to bottom right, #8e44ad, #c0392b); }
 
         .card-content {
             padding: 1.5rem;
+            flex-grow: 1;
         }
 
         .card-tags {
@@ -537,9 +533,9 @@
         </ul>
 
         <div class="social-links">
-            <a class="social-icon" href="#"><i data-lucide="youtube"></i></a>
-            <a class="social-icon" href="#"><i data-lucide="twitter"></i></a>
-            <a class="social-icon" href="#"><i data-lucide="facebook"></i></a>
+            <a class="social-icon" href="https://www.youtube.com/@ahmedatefdev" target="_blank"><i data-lucide="youtube"></i></a>
+            <a class="social-icon" href="https://x.com/AhmedAtef189269" target="_blank"><i data-lucide="twitter"></i></a>
+            <a class="social-icon" href="https://www.facebook.com/share/17vZVAzP23/" target="_blank"><i data-lucide="facebook"></i></a>
         </div>
     </aside>
 
@@ -589,67 +585,68 @@
             <h1 class="section-title">My Projects</h1>
             <div class="portfolio-grid">
                 
-                <!-- Project 1 -->
-                <article class="project-card">
-                    <div class="card-image game1">
-                        <i data-lucide="swords"></i>
-                    </div>
+                <!-- Project 1: Deadpool & Wolverine -->
+                <article class="project-card" onclick="window.open('https://animatixofficial.itch.io/deadpool-wolverine-the-game', '_blank')">
+                    <img src="https://img.itch.zone/aW1nLzE3NzI2NTU4LnBuZw==/315x250%23c/FXOnBf.png" alt="Deadpool & Wolverine Game Cover" class="card-image">
                     <div class="card-content">
                         <div class="card-tags">
-                            <span class="tag">GDevelop</span>
-                            <span class="tag">2D</span>
-                            <span class="tag">QTE</span>
+                            <span class="tag">Action</span>
+                            <span class="tag">Fan Game</span>
                         </div>
                         <h3 class="card-title">Deadpool & Wolverine</h3>
-                        <p class="card-desc">An action-packed 2D QTE game created with GDevelop.</p>
+                        <p class="card-desc">A fast-paced fan game featuring the iconic duo. Experience high-octane action and humor.</p>
                     </div>
                 </article>
 
-                <!-- Project 2 -->
-                <article class="project-card">
-                    <div class="card-image game2">
-                        <i data-lucide="car"></i>
-                    </div>
+                <!-- Project 2: Daredevil -->
+                <article class="project-card" onclick="window.open('https://animatixofficial.itch.io/daredevil', '_blank')">
+                    <img src="https://img.itch.zone/aW1nLzE3MTI1MTY2LnBuZw==/315x250%23c/UTS2c5.png" alt="Daredevil: The Ruthless Devil Game Cover" class="card-image">
                     <div class="card-content">
                         <div class="card-tags">
-                            <span class="tag">Unity</span>
-                            <span class="tag">C#</span>
-                            <span class="tag">Racing</span>
+                            <span class="tag">Action</span>
+                            <span class="tag">QTE</span>
                         </div>
-                        <h3 class="card-title">Neon Drift</h3>
-                        <p class="card-desc">High-octane arcade racing game with physics-based drifting mechanics and multiplayer support.</p>
+                        <h3 class="card-title">Daredevil: Ruthless Devil</h3>
+                        <p class="card-desc">A Daredevil themed game focused on quick time events, reflexes, and intense combat sequences.</p>
                     </div>
                 </article>
 
-                <!-- Project 3 -->
-                <article class="project-card">
-                    <div class="card-image game3">
-                        <i data-lucide="box"></i>
-                    </div>
+                <!-- Project 3: Final Countdown -->
+                <article class="project-card" onclick="window.open('https://animatixofficial.itch.io/final-countdown', '_blank')">
+                    <img src="https://img.itch.zone/aW1nLzE3MTI5MzIzLnBuZw==/315x250%23c/T1v6Qu.png" alt="Final Countdown Game Cover" class="card-image">
                     <div class="card-content">
                         <div class="card-tags">
-                            <span class="tag">Godot</span>
                             <span class="tag">Puzzle</span>
-                            <span class="tag">Mobile</span>
+                            <span class="tag">Browser</span>
                         </div>
-                        <h3 class="card-title">Cube Logic</h3>
-                        <p class="card-desc">A spatial puzzle game designed for mobile devices with over 100 levels of increasing difficulty.</p>
+                        <h3 class="card-title">Final Countdown</h3>
+                        <p class="card-desc">A tense mix of action and puzzle solving. Race against time to solve challenges before the clock runs out.</p>
                     </div>
                 </article>
 
-                <!-- Project 4 -->
-                <article class="project-card">
-                    <div class="card-image">
-                        <i data-lucide="ghost"></i>
-                    </div>
+                <!-- Project 4: Agent Leon -->
+                <article class="project-card" onclick="window.open('https://animatixofficial.itch.io/agent-leon-recondite-project', '_blank')">
+                    <img src="https://img.itch.zone/aW1nLzE3MTUyOTUxLnBuZw==/315x250%23c/muM6C6.png" alt="Agent Leon: Recondite Project-Beta Game Cover" class="card-image">
                     <div class="card-content">
                         <div class="card-tags">
-                            <span class="tag">Godot</span>
-                            <span class="tag">2D</span>
-                            <span class="tag">Platformer</span>
+                            <span class="tag">Action</span>
+                            <span class="tag">Adventure</span>
                         </div>
-                        <h3 class="card-title">Spirit Walker</h3>
-                        <p class="card-desc">Atmospheric 2D platformer exploring themes of memory and time. Features hand-drawn assets.</p>
+                        <h3 class="card-title">Agent Leon: Recondite</h3>
+                        <p class="card-desc">Join Agent Leon Abram in his first action-packed adventure. Uncover secrets and fight enemies.</p>
+                    </div>
+                </article>
+
+                <!-- Project 5: Gamer's Life -->
+                <article class="project-card" onclick="window.open('https://animatixofficial.itch.io/gamers-life', '_blank')">
+                    <img src="https://img.itch.zone/aW1nLzE3MTUyMDM0LmpwZw==/315x250%23c/5Twgyu.jpg" alt="Gamer's Life Game Cover" class="card-image">
+                    <div class="card-content">
+                        <div class="card-tags">
+                            <span class="tag">Simulation</span>
+                            <span class="tag">Life Sim</span>
+                        </div>
+                        <h3 class="card-title">Gamer's Life</h3>
+                        <p class="card-desc">A small look at a gamer's life. Experience the daily routine and challenges of a dedicated gamer.</p>
                     </div>
                 </article>
 
@@ -669,6 +666,14 @@
 
                     <h3 style="color: var(--primary); margin-bottom: 1.5rem; font-family: var(--font-ar);">Experience</h3>
                     
+                    <!-- NEW ENTRY: Animatix Founder -->
+                    <div class="experience-card">
+                        <div class="exp-role">Founder</div>
+                        <span class="exp-company">Animatix - Game development & animation studio</span>
+                        <div class="exp-date">2020 - Present</div>
+                        <p class="card-desc">Founded Animatix, driving creative and technical direction for game development and animation projects, and overseeing studio operations.</p>
+                    </div>
+
                     <div class="experience-card">
                         <div class="exp-role">Co-founder & Game Developer</div>
                         <span class="exp-company">Gametric Studios</span>
@@ -731,43 +736,43 @@
                 <h3 style="color: var(--primary); margin-bottom: 1rem;">Connect with me</h3>
                 <div class="social-grid">
                     <!-- Youtube -->
-                    <a href="#" class="social-card">
+                    <a href="https://www.youtube.com/@ahmedatefdev" target="_blank" class="social-card">
                         <div class="icon-box" style="color: #FF0000; background: rgba(255,0,0,0.1);"><i data-lucide="youtube"></i></div>
                         <span>Youtube</span>
                     </a>
 
                     <!-- Email -->
-                    <a href="mailto:contact@ahmedatef.dev" class="social-card">
+                    <a href="mailto:ahmedatef261004@gmail.com" class="social-card">
                         <div class="icon-box" style="color: var(--secondary); background: rgba(52, 152, 219, 0.1);"><i data-lucide="mail"></i></div>
                         <span>Email</span>
                     </a>
 
                     <!-- Fiverr -->
-                    <a href="#" class="social-card">
+                    <a href="https://www.fiverr.com/s/zWgmeEb" target="_blank" class="social-card">
                         <div class="icon-box" style="color: #1DBF73; background: rgba(29, 191, 115, 0.1);"><i data-lucide="briefcase"></i></div>
                         <span>Fiverr</span>
                     </a>
 
                     <!-- X (Twitter) -->
-                    <a href="#" class="social-card">
+                    <a href="https://x.com/AhmedAtef189269" target="_blank" class="social-card">
                         <div class="icon-box" style="color: #000; background: rgba(0,0,0,0.1);"><i data-lucide="twitter"></i></div>
                         <span>X (Twitter)</span>
                     </a>
 
                     <!-- Facebook -->
-                    <a href="#" class="social-card">
+                    <a href="https://www.facebook.com/share/17vZVAzP23/" target="_blank" class="social-card">
                         <div class="icon-box" style="color: #1877F2; background: rgba(24, 119, 242, 0.1);"><i data-lucide="facebook"></i></div>
                         <span>Facebook</span>
                     </a>
 
                     <!-- Instagram -->
-                    <a href="#" class="social-card">
+                    <a href="https://www.instagram.com/ahmedatefdev/" target="_blank" class="social-card">
                         <div class="icon-box" style="color: #E1306C; background: rgba(225, 48, 108, 0.1);"><i data-lucide="instagram"></i></div>
                         <span>Instagram</span>
                     </a>
 
                     <!-- Tiktok -->
-                    <a href="#" class="social-card">
+                    <a href="https://www.tiktok.com/@ahmedatefdev04?lang=ar" target="_blank" class="social-card">
                         <div class="icon-box" style="color: #000; background: rgba(0,0,0,0.1);"><i data-lucide="video"></i></div>
                         <span>Tiktok</span>
                     </a>
