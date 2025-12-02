@@ -76,13 +76,12 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            /* Removed background-color, font-size, and color */
             margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
             border: 3px solid var(--highlight);
-            overflow: hidden; /* Ensure image respects the border-radius */
+            overflow: hidden; 
         }
         
         /* Style for the image inside the profile-img div */
@@ -94,7 +93,7 @@
 
 
         .dev-name {
-            font-family: var(--font-ar); /* Styled for name */
+            font-family: var(--font-ar); 
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
@@ -310,7 +309,7 @@
             top: 0;
             display: flex;
             flex-direction: column;
-            text-decoration: none; /* For when using as link */
+            text-decoration: none; 
             color: inherit;
         }
 
@@ -321,8 +320,8 @@
 
         .card-image {
             width: 100%;
-            height: 200px; /* Fixed height for consistency */
-            object-fit: cover; /* Maintain aspect ratio and cover the area */
+            height: 200px; 
+            object-fit: cover; 
             display: block; 
             background-color: #eee;
         }
@@ -416,6 +415,70 @@
         .exp-company { color: var(--secondary); font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
         .exp-date { color: var(--text-light); font-size: 0.8rem; margin-bottom: 0.8rem; }
 
+        /* --- Testimonials Section Styling --- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
+            border-top: 5px solid var(--highlight);
+        }
+
+        .testimonial-card blockquote {
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            border-left: 3px solid var(--secondary);
+            padding-left: 1rem;
+        }
+
+        .client-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .client-name {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1rem;
+        }
+        
+        .client-location {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            font-style: normal;
+        }
+
+        .rating {
+            color: #FFC107; /* Star color */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 1rem;
+        }
+
+        .rating i[data-lucide="star"] {
+            fill: #FFC107;
+            color: #FFC107;
+            width: 16px;
+            height: 16px;
+        }
+
+
         /* --- Contact Section --- */
         .contact-wrapper {
             background: white;
@@ -498,6 +561,7 @@
             .section-title { font-size: 2rem; }
             .hero-heading { font-size: 2.5rem; }
             .social-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -512,7 +576,6 @@
     <aside class="sidebar" id="sidebar">
         <div class="profile-section">
             <div class="profile-img">
-                <!-- Image Updated with the new URL -->
                 <img id="profile-picture" 
                      src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/723b4fbac4a10043f54f6471893da0dd-1764631133473/403350f4-c23e-407b-a195-0b7662331dac.png" 
                      alt="Profile Picture of Ahmed Atef" 
@@ -537,6 +600,11 @@
             <li class="nav-item">
                 <button class="nav-btn" data-target="about">
                     <i data-lucide="user"></i> About Me
+                </button>
+            </li>
+             <li class="nav-item">
+                <button class="nav-btn" data-target="testimonials">
+                    <i data-lucide="star"></i> Testimonials
                 </button>
             </li>
             <li class="nav-item">
@@ -717,7 +785,7 @@
                             <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
                         </div>
                         <div class="skill-item">
-                            <div class="skill-info"><span>Unity</span><span>25%</span></div>
+                            <div class="skill-info"><span>Unity</span><span>25%</div>
                             <div class="progress-bar"><div class="progress-fill" style="width: 25%"></div></div>
                         </div>
                         <div class="skill-item">
@@ -738,6 +806,188 @@
                 </div>
             </div>
         </section>
+        
+        <!-- TESTIMONIALS SECTION (UPDATED) -->
+        <section id="testimonials" class="tab-section">
+            <h1 class="section-title">Client Testimonials</h1>
+            
+            <p style="margin-bottom: 2rem; color: var(--text-light); max-width: 800px;">
+                I believe in delivering projects that not only meet but exceed client expectations. Here is what some of my 14 clients have to say about working with me.
+            </p>
+
+            <div class="testimonials-grid">
+                
+                <!-- Testimonial 1: sukalp_tripathi, India, 5 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 5.0</div>
+                    <blockquote>
+                        Ahmed was really cooperative, working with him on this project was a really good experience. I would definitely recommend anyone looking at this to choose Ahmed to work with you on your projects, you won't regret it.
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">sukalp_tripathi</span>
+                        <span class="client-location">India</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2: jason9rodriguez, Switzerland, 5 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 5.0</div>
+                    <blockquote>
+                        I can definitely recommend Ahmed if you want to develop a pc game. He understands your requirements quite well and give you also a detailed feedback. In general its fun to work with him and I will work soon with him for new projects.
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">jason9rodriguez</span>
+                        <span class="client-location">Switzerland</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3: xxd_works, United States, 4 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 4.0</div>
+                    <blockquote>
+                        I love how patient & polite he is.
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">xxd_works</span>
+                        <span class="client-location">United States</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4: waffuroh, Greece, 5 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 5.0</div>
+                    <blockquote>
+                        Ahmed is a really good developer and i like working with him, i recommend him!
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">waffuroh</span>
+                        <span class="client-location">Greece</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 5: jason9rodriguez, Switzerland, 3.3 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 3.3</div>
+                    <blockquote>
+                        Ahmed is very motivated and committed.
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">jason9rodriguez</span>
+                        <span class="client-location">Switzerland</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6: soniabvc, Cyprus, 5 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 5.0</div>
+                    <blockquote>
+                        Good job. Plan to get more apps from Ahmed.
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">soniabvc</span>
+                        <span class="client-location">Cyprus</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 7: waffuroh, Greece, 5 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 5.0</div>
+                    <blockquote>
+                        what can I say he definitely exceeded expectations approved!
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">waffuroh</span>
+                        <span class="client-location">Greece</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 8: waffuroh, Greece, 4.3 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 4.3</div>
+                    <blockquote>
+                        Very good job for a very good price, really satisfied i recommend!
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">waffuroh</span>
+                        <span class="client-location">Greece</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 9: tonyv4k, United States, 5 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 5.0</div>
+                    <blockquote>
+                        amazing work and talented! thank you again my friend.
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">tonyv4k</span>
+                        <span class="client-location">United States</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 10: shailoy786, Norway, 5 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 5.0</div>
+                    <blockquote>
+                        Extremely talented, very cooperative.
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">shailoy786</span>
+                        <span class="client-location">Norway</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 11: shailoy786, Norway, 5 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 5.0</div>
+                    <blockquote>
+                        Great resource and very talented person. I would love to work with him again.
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">shailoy786</span>
+                        <span class="client-location">Norway</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 12: abolfazlarab, Germany, 5 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 5.0</div>
+                    <blockquote>
+                        It was a great time to work with this man, he communicates super well which helps the process a lot!
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">abolfazlarab</span>
+                        <span class="client-location">Germany</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 13: user53238757, North Macedonia, 4.7 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 4.7</div>
+                    <blockquote>
+                        He was really communicative and really open about the development process and any changes that were needed. Would definitely recommend.
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">user53238757</span>
+                        <span class="client-location">North Macedonia</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 14: tonyv4k, United States, 5 -->
+                <div class="testimonial-card">
+                    <div class="rating"><i data-lucide="star" style="fill:#FFC107;"></i> 5.0</div>
+                    <blockquote>
+                        It was a pleasure dealing with Steve, he is a very hard working person. I am grateful to have hired him! I will have weekly work for him. thank you so much again!
+                    </blockquote>
+                    <div class="client-info">
+                        <span class="client-name">tonyv4k</span>
+                        <span class="client-location">United States</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
 
         <!-- CONTACT SECTION -->
         <section id="contact" class="tab-section">
