@@ -76,15 +76,22 @@
             width: 100px;
             height: 100px;
             border-radius: 50%;
-            background-color: var(--secondary);
+            /* Removed background-color, font-size, and color */
             margin: 0 auto 1rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
-            color: white;
             border: 3px solid var(--highlight);
+            overflow: hidden; /* Ensure image respects the border-radius */
         }
+        
+        /* Style for the image inside the profile-img div */
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
 
         .dev-name {
             font-family: var(--font-ar); /* Styled for name */
@@ -504,7 +511,14 @@
     <!-- Sidebar Navigation -->
     <aside class="sidebar" id="sidebar">
         <div class="profile-section">
-            <div class="profile-img">AA</div>
+            <div class="profile-img">
+                <!-- Image Updated with the new URL -->
+                <img id="profile-picture" 
+                     src="https://fiverr-res.cloudinary.com/t_profile_original,q_auto,f_auto/attachments/profile/photo/723b4fbac4a10043f54f6471893da0dd-1764631133473/403350f4-c23e-407b-a195-0b7662331dac.png" 
+                     alt="Profile Picture of Ahmed Atef" 
+                     onerror="this.onerror=null; this.src='https://placehold.co/100x100/2C3E50/E74C3C?text=A.A.';"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
             <div class="dev-name">Ahmed Atef</div>
             <div class="dev-role">Game Developer</div>
         </div>
